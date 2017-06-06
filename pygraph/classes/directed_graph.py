@@ -1,6 +1,7 @@
 """Implements the functionality of a directed graph."""
 
 import copy
+import six
 
 from ..exceptions import NonexistentNodeError, NonexistentEdgeError
 
@@ -126,11 +127,11 @@ class DirectedGraph(object):
 
     def get_all_node_ids(self):
         """Returns a list of all the node ids in the graph."""
-        return self.nodes.keys()
+        return list(six.iterkeys(self.nodes))
 
     def get_all_node_objects(self):
         """Returns a list of all the node objects in the graph."""
-        return self.nodes.values()
+        return list(six.itervalues(self.nodes))
 
     def get_edge(self, edge_id):
         """Returns the edge object identified by "edge_id"."""
@@ -142,11 +143,11 @@ class DirectedGraph(object):
 
     def get_all_edge_ids(self):
         """Returns a list of all the edge ids in the graph"""
-        return self.edges.keys()
+        return list(six.iterkeys(self.edges))
 
     def get_all_edge_objects(self):
         """Returns a list of all the edge objects in the graph."""
-        return self.edges.values()
+        return list(six.itervalues(self.edges))
 
     def delete_edge_by_id(self, edge_id):
         """Removes the edge identified by "edge_id" from the graph."""

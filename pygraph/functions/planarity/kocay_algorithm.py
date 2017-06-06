@@ -1058,7 +1058,7 @@ def fn_x(i, dfs_data):
     """The minimum vertex (DFS-number) in a frond contained in Ri."""
     try:
         return R(i, dfs_data)['x']
-    except Exception, e:
+    except:
         # Page 17 states that if Ri is empty, then we take xi to be n
         return dfs_data['graph'].num_nodes()
 
@@ -1067,7 +1067,7 @@ def y(i, dfs_data):
     """The maximum vertex (DFS-number) in a frond contained in Ri."""
     try:
         return R(i, dfs_data)['y']
-    except Exception, e:
+    except:
         # Page 17 states that if Ri is empty, then we take yi to be 0
         return 0
 

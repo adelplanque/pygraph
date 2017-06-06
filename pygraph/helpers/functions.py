@@ -144,12 +144,12 @@ def create_graph_from_adjacency_matrix(adjacency_matrix):
     node_column_mapping = []
 
     num_columns = len(adjacency_matrix)
-    for _ in xrange(num_columns):
+    for _ in range(num_columns):
         node_id = graph.new_node()
         node_column_mapping.append(node_id)
 
-    for j in xrange(num_columns):
-        for i in xrange(num_columns):
+    for j in range(num_columns):
+        for i in range(num_columns):
             if adjacency_matrix[j][i]:
                 jnode_id = node_column_mapping[j]
                 inode_id = node_column_mapping[i]
@@ -173,8 +173,8 @@ def is_adjacency_matrix_symmetric(adjacency_matrix):
     # Loop through the bottom half of the matrix and compare it to the top half
     # --We do the bottom half because of how we construct adjacency matrices
     max_i = 0
-    for j in xrange(num_columns):
-        for i in xrange(max_i):
+    for j in range(num_columns):
+        for i in range(max_i):
             # If i == j, we can skip ahead so we don't compare with ourself
             if i == j:
                 continue
@@ -187,4 +187,3 @@ def is_adjacency_matrix_symmetric(adjacency_matrix):
     # If we reach this far without returning false, then we know that everything matched,
     # which makes this a symmetric matrix
     return True
-

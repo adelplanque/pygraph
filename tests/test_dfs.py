@@ -42,7 +42,8 @@ class DepthFirstSearchTest(unittest.TestCase):
 
         ordering = depth_first_search(graph, 1)
         node_lookup_by_index = dict(zip(range(1, len(ordering) + 1), ordering))
-        items_sorted_by_dfs_index = zip(ordering, range(1, len(ordering) + 1))
+        items_sorted_by_dfs_index = \
+            list(zip(ordering, range(1, len(ordering) + 1)))
         # index_lookup_by_node = dict(items_sorted_by_dfs_index)
 
         visited_by_node = defaultdict(lambda: False)
@@ -90,4 +91,3 @@ class DepthFirstSearchTest(unittest.TestCase):
 
         for n in all_nodes:
             self.assertIn(n, ordering)
-

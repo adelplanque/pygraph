@@ -12,7 +12,7 @@ def build_cycle_graph(num_nodes):
         first_node = graph.new_node()
         if num_nodes > 1:
             previous_node = first_node
-            for _ in xrange(num_nodes - 1):
+            for _ in range(num_nodes - 1):
                 new_node = graph.new_node()
                 graph.new_edge(previous_node, new_node)
                 previous_node = new_node
@@ -95,7 +95,7 @@ def build_k5_graph():
     graph = UndirectedGraph()
 
     # K5 has 5 nodes
-    for _ in xrange(5):
+    for _ in range(5):
         graph.new_node()
 
     # K5 has 10 edges
@@ -129,7 +129,7 @@ def build_k33_graph():
     graph = UndirectedGraph()
 
     # K3,3 has 6 nodes
-    for _ in xrange(1, 7):
+    for _ in range(1, 7):
         graph.new_node()
 
     # K3,3 has 9 edges
@@ -159,9 +159,9 @@ def build_groetzch_graph():
        Ref: http://mathworld.wolfram.com/GroetzschGraph.html"""
     # Because the graph is so complicated, we want to
     # build it via adjacency matrix specification
-    
+
     # -- Initialize the matrix to all zeros
-    adj = [[0 for _ in xrange(11)] for _ in xrange(11)]
+    adj = [[0 for _ in range(11)] for _ in range(11)]
 
     # -- Add individual edge connections
     row_connections = []
@@ -182,7 +182,7 @@ def build_groetzch_graph():
         for i in tpl:
             adj[j][i] = 1
             adj[i][j] = 1
-    
+
     # Debug print the adjacency matrix
     #for row in adj:
     #    print row
@@ -231,4 +231,3 @@ def build_chvatal_graph():
         graph.new_edge(i, j)
 
     return graph
-
